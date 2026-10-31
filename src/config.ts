@@ -6,7 +6,7 @@ export const SITE = {
     'Ashwin Chekavan is an entrepreneur and business strategist from Bangalore, India, building businesses, systems and ideas across infrastructure, technology, creative industries and real estate.',
   tagline: 'Entrepreneur · Business Strategist · Builder',
   location: 'Bangalore, India',
-  email: 'hello@ashwinrajk.com',
+  email: 'hello@ashwinchekavan.com',
   // Optional form backend (Formspree, Web3Forms, …). When empty the contact
   // form opens the visitor's mail app instead.
   formEndpoint: '',
