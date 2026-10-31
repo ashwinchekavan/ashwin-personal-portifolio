@@ -1,9 +1,9 @@
 // Everything site-wide lives here. Fill in the empty strings before launch.
 export const SITE = {
-  name: 'Ashwin Raj K',
-  title: 'Ashwin Raj K — Entrepreneur, Business Strategist & Builder',
+  name: 'Ashwin Chekavan',
+  title: 'Ashwin Chekavan — Entrepreneur, Business Strategist & Builder',
   description:
-    'Ashwin Raj K is an entrepreneur and business strategist from Bangalore, India, building businesses, systems and ideas across infrastructure, technology, creative industries and real estate.',
+    'Ashwin Chekavan is an entrepreneur and business strategist from Bangalore, India, building businesses, systems and ideas across infrastructure, technology, creative industries and real estate.',
   tagline: 'Entrepreneur · Business Strategist · Builder',
   location: 'Bangalore, India',
   email: 'hello@ashwinrajk.com',
