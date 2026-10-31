@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import sample from '../assets/sample.jpg';
+import defaultPostCover from '../assets/default-post-cover.jpg';
 import { formatDate, url } from '../config';
 import type { Post } from '../lib/posts';
 
@@ -32,7 +32,7 @@ const used = [...new Set(posts.map((p) => p.category))];
                 <img src={post.cover} alt="" loading="lazy" decoding="async" />
               ) : (
                 <Image
-                  src={sample}
+                  src={defaultPostCover}
                   alt=""
                   widths={[320, 480, 640]}
                   sizes="(min-width: 1000px) 300px, (min-width: 640px) 50vw, 100vw"

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import sample from '../../assets/sample.jpg';
+import defaultPostCover from '../../assets/default-post-cover.jpg';
 import Icon from '../../components/Icon.astro';
 import Base from '../../layouts/Base.astro';
 import { SITE, formatDate, fullUrl, url } from '../../config';
@@ -66,7 +66,7 @@ const jsonLd = [
         {cover ? (
           <img src={cover} alt="" />
         ) : (
-          <Image src={sample} alt="" widths={[640, 1000, 1600]} sizes="(min-width: 1240px) 1128px, 100vw" width={1600} height={700} loading="eager" />
+          <Image src={defaultPostCover} alt="" widths={[640, 1000, 1600]} sizes="(min-width: 1240px) 1128px, 100vw" width={1600} height={700} loading="eager" />
         )}
       </div>
     </div>

@@ -1,7 +1,14 @@
 ---
 import '@fontsource/noto-serif-malayalam/malayalam-700.css';
 import { Image } from 'astro:assets';
-import sample from '../assets/sample.jpg';
+import aboutPortrait from '../assets/about-portrait.jpg';
+import bookCover from '../assets/book-cover.jpg';
+import businessCreatif from '../assets/business-creatif.jpg';
+import businessDreamRich from '../assets/business-dream-rich.jpg';
+import businessOtherVentures from '../assets/business-other-ventures.jpg';
+import hero from '../assets/hero.jpg';
+import statsBackground from '../assets/stats-background.jpg';
+import visionBackground from '../assets/vision-background.jpg';
 import Icon from '../components/Icon.astro';
 import PostGrid from '../components/PostGrid.astro';
 import Base from '../layouts/Base.astro';
@@ -101,7 +108,7 @@ const jsonLd = [
         <div class="hero__glow" aria-hidden="true"></div>
         <div class="media media--bw hero__img">
           <Image
-            src={sample}
+            src={hero}
             alt={`${SITE.name}, entrepreneur and business strategist`}
             widths={[480, 720, 1080]}
             sizes="(min-width: 900px) 520px, 100vw"
@@ -119,7 +126,7 @@ const jsonLd = [
 
   <section class="stats" aria-label="Numbers that matter">
     <div class="media media--bw stats__bg" aria-hidden="true">
-      <Image src={sample} alt="" widths={[800, 1600]} sizes="100vw" width={1600} height={500} />
+      <Image src={statsBackground} alt="" widths={[800, 1600]} sizes="100vw" width={1600} height={500} />
     </div>
     <div class="container">
       <dl class="stats__list">
@@ -154,7 +161,7 @@ const jsonLd = [
       </aside>
       <div class="media media--bw about__img">
         <Image
-          src={sample}
+          src={aboutPortrait}
           alt={`Portrait of ${SITE.name}`}
           widths={[400, 700]}
           sizes="(min-width: 900px) 340px, 100vw"
@@ -219,7 +226,7 @@ const jsonLd = [
       <ul class="biz-grid">
         <li class="biz-card">
           <div class="media media--dusk">
-            <Image src={sample} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} style="transform: scale(1.7); transform-origin: 20% 80%" />
+            <Image src={businessDreamRich} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
           </div>
           <div class="biz-card__body">
             <h3 class="script grad-text biz-card__script">Dream Rich</h3>
@@ -231,7 +238,7 @@ const jsonLd = [
         </li>
         <li class="biz-card">
           <div class="media media--dusk">
-            <Image src={sample} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} style="transform: scale(1.7); transform-origin: 80% 60%" />
+            <Image src={businessCreatif} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
           </div>
           <div class="biz-card__body">
             <h3><span class="biz-card__dot" aria-hidden="true"></span>Creatif <small>Group of Companies</small></h3>
@@ -243,7 +250,7 @@ const jsonLd = [
         </li>
         <li class="biz-card">
           <div class="media media--dusk">
-            <Image src={sample} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} style="transform: scale(1.7); transform-origin: 50% 20%" />
+            <Image src={businessOtherVentures} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
           </div>
           <div class="biz-card__body">
             <h3><span class="grad-text"><Icon name="handshake" size={24} /></span>Other Ventures</h3>
@@ -275,7 +282,7 @@ const jsonLd = [
       </div>
 
       <div class="book__cover media media--dusk">
-        <Image src={sample} alt="Cover of the book Kozhinja Ravukalile Vasantham by Ashwin Raj K" widths={[300, 600]} sizes="280px" width={600} height={860} style="transform: scale(1.7); transform-origin: 30% 50%" />
+        <Image src={bookCover} alt="Cover of the book Kozhinja Ravukalile Vasantham by Ashwin Raj K" widths={[300, 600]} sizes="280px" width={600} height={860} />
         <p class="book__title" lang="ml">കൊഴിഞ്ഞ<br />രാവുകളിലെ<br />വസന്തം</p>
         <p class="eyebrow book__author">{SITE.name}</p>
       </div>
@@ -304,7 +311,7 @@ const jsonLd = [
 
   <section class="vision" aria-labelledby="vision-title">
     <div class="media media--dusk vision__bg" aria-hidden="true">
-      <Image src={sample} alt="" widths={[800, 1600]} sizes="100vw" width={1600} height={600} style="transform: scale(1.7); transform-origin: 50% 35%" />
+      <Image src={visionBackground} alt="" widths={[800, 1600]} sizes="100vw" width={1600} height={600} />
     </div>
     <div class="container vision__grid">
       <div>
