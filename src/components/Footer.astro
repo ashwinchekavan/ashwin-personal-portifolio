@@ -6,7 +6,9 @@ import { NAV, SITE, url } from '../config';
 <footer class="footer">
   <div class="container footer__top">
     <div class="footer__brand">
-      <a class="logo" href={url('/')} aria-label={`${SITE.name} — home`}>{SITE.name}</a>
+      <a class="logo logo--image" href={url('/')} aria-label={`${SITE.name} — home`}>
+        <img src={url('/logo.svg')} alt="" />
+      </a>
       <p>{SITE.tagline}<br />Building businesses, systems and ideas that create long-term value.</p>
     </div>
     <nav class="footer__nav" aria-label="Footer">

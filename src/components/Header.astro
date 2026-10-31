@@ -10,7 +10,9 @@ const isCurrent = (href: string) =>
 
 <header class="header" data-header>
   <div class="container header__bar">
-    <a class="logo" href={url('/')} aria-label={`${SITE.name} — home`}>{SITE.name}</a>
+    <a class="logo logo--image" href={url('/')} aria-label={`${SITE.name} — home`}>
+      <img src={url('/logo.svg')} alt="" />
+    </a>
 
     <nav class="nav" aria-label="Primary">
       {NAV.map((item) => (
