@@ -12,7 +12,7 @@
   --serif: 'Playfair Display Variable', Georgia, 'Times New Roman', serif;
   --sans: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --script: 'Mrs Saint Delafield', 'Snell Roundhand', cursive;
-  --header-h: 76px;
+  --header-h: clamp(68px, 11vw, 150px);
   --radius: 6px;
 }
 
@@ -1343,10 +1343,6 @@ h2 {
 /* Mobile */
 
 @media (max-width: 760px) {
-  :root {
-    --header-h: 68px;
-  }
-
   .logo {
     font-size: 2.2rem;
   }
