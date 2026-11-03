@@ -2,15 +2,23 @@
 import { Image } from 'astro:assets';
 import defaultPostCover from '../../assets/default-post-cover.jpg';
 import Icon from '../../components/Icon.astro';
+import PostGrid from '../../components/PostGrid.astro';
 import Base from '../../layouts/Base.astro';
 import { SITE, formatDate, fullUrl, url } from '../../config';
-import { getPublishedBySlug } from '../../lib/posts';
+import { getPublishedBySlug, listPublishedOrEmpty } from '../../lib/posts';
+import { textOnly } from '../../lib/sanitize';
 
 const post = await getPublishedBySlug(Astro.params.slug ?? '');
 if (!post) return Astro.rewrite('/404');
 
-const { title, description, date: pubDate, updated: updatedDate, category, cover } = post;
+const { title, date: pubDate, updated: updatedDate, category, cover } = post;
+const summary = post.description.trim() || textOnly(post.content);
+const description =
+  summary.length > 200 ? `${summary.slice(0, 197).trimEnd()}…` : summary || `${title} by ${SITE.name}.`;
 const postUrl = fullUrl(`/writing/${post.slug}/`);
+const relatedPosts = (await listPublishedOrEmpty(12))
+  .filter((related) => related.slug !== post.slug && related.category === category)
+  .slice(0, 3);
 
 const jsonLd = [
   {
@@ -22,6 +30,7 @@ const jsonLd = [
     dateModified: (updatedDate ?? pubDate).toISOString(),
     articleSection: category,
     mainEntityOfPage: postUrl,
+    image: fullUrl(cover ?? defaultPostCover.src),
     author: { '@type': 'Person', name: SITE.name, url: fullUrl('/') },
     publisher: { '@type': 'Person', name: SITE.name, url: fullUrl('/') },
   },
@@ -64,9 +73,9 @@ const jsonLd = [
     <div class="container">
       <div class:list={['media', 'article__cover', { 'media--dusk': !cover }]}>
         {cover ? (
-          <img src={cover} alt="" />
+          <img src={cover} alt={`Cover image for ${title}`} />
         ) : (
-          <Image src={defaultPostCover} alt="" widths={[640, 1000, 1600]} sizes="(min-width: 1240px) 1128px, 100vw" width={1600} height={700} loading="eager" />
+          <Image src={defaultPostCover} alt={`Cover image for ${title}`} widths={[640, 1000, 1600]} sizes="(min-width: 1240px) 1128px, 100vw" width={1600} height={700} loading="eager" />
         )}
       </div>
     </div>
@@ -79,5 +88,14 @@ const jsonLd = [
       <a class="btn btn--outline" href={url('/writing/')}>All Articles <Icon name="arrow" size={16} /></a>
       <a class="btn" href={url('/#contact')}>Let's Connect <Icon name="arrow" size={16} /></a>
     </footer>
+
+    {relatedPosts.length > 0 && (
+      <section class="section section--tight" aria-labelledby="related-writing">
+        <div class="container">
+          <h2 id="related-writing">More in {category}</h2>
+          <PostGrid posts={relatedPosts} headingLevel="h3" />
+        </div>
+      </section>
+    )}
   </article>
 </Base>
