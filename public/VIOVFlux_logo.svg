@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" role="img" aria-labelledby="title description">
+  <title id="title">VIOV Flux</title>
+  <desc id="description">VIOV Flux logo with a flowing, connected AI-inspired mark.</desc>
+  <defs>
+    <linearGradient id="flux" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b8f9b"/>
+      <stop offset="0.55" stop-color="#6262b4"/>
+      <stop offset="1" stop-color="#a34f9d"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="15" width="150" height="150" rx="34" fill="#17283c"/>
+  <path d="M43 69c13-19 31-19 44 0s31 19 44 0M43 111c13-19 31-19 44 0s31 19 44 0" fill="none" stroke="url(#flux)" stroke-linecap="round" stroke-width="9"/>
+  <path d="M50 90h73" fill="none" stroke="#f4f3fb" stroke-linecap="round" stroke-width="7"/>
+  <circle cx="45" cy="90" r="6" fill="#57b6b1"/>
+  <circle cx="128" cy="90" r="6" fill="#ab65bc"/>
+  <text x="192" y="94" fill="#17283c" font-family="Arial, Helvetica, sans-serif" font-size="61" font-weight="700" letter-spacing="7">VIOV</text>
+  <text x="198" y="132" fill="url(#flux)" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" letter-spacing="10">FLUX</text>
+  <text x="331" y="130" fill="#74808e" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="500" letter-spacing="2">AI SOLUTIONS</text>
+</svg>

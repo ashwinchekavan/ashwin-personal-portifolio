@@ -3,9 +3,6 @@ import '@fontsource/noto-serif-malayalam/malayalam-700.css';
 import { Image } from 'astro:assets';
 import aboutPortrait from '../assets/about-portrait.jpg';
 import bookCover from '../assets/book-cover.jpg';
-import businessCreatif from '../assets/business-creatif.jpg';
-import businessDreamRich from '../assets/business-dream-rich.jpg';
-import businessOtherVentures from '../assets/business-other-ventures.jpg';
 import hero from '../assets/hero.jpg';
 import statsBackground from '../assets/stats-background.jpg';
 import visionBackground from '../assets/vision-background.jpg';
@@ -218,48 +215,45 @@ const jsonLd = [
       <div class="section-head">
         <div>
           <p class="eyebrow">My Businesses</p>
-          <h2>Ideas. Ventures. Impact.</h2>
+          <h2>Building What Comes Next.</h2>
         </div>
-        <p>Businesses across infrastructure, technology, creative services, real estate and emerging opportunities.</p>
+        <p>Independent ventures bringing together property, design, construction and applied AI.</p>
         <a class="btn btn--outline" href="#contact">Work With Me <Icon name="arrow" size={16} /></a>
       </div>
 
       <ul class="biz-grid">
-        <li class="biz-card">
-          <div class="media media--dusk">
-            <Image src={businessDreamRich} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
+        <li class="biz-card biz-card--dream-rich">
+          <div class="biz-card__brand">
+            <img src={url('/DreamRichAssociates_logo.svg')} alt="Dream Rich Associates logo" width="620" height="180" />
           </div>
           <div class="biz-card__body">
-            <h3 class="script grad-text biz-card__script">Dream Rich</h3>
-            <p>Construction · Infrastructure<br />Interiors · Real Estate</p>
+            <p class="biz-card__eyebrow">Property · Design · Delivery</p>
+            <h3>Dream Rich Associates Pvt. Ltd.</h3>
+            <p>Interiors, construction, real estate and digital solutions—bringing spaces, projects and ideas to life.</p>
             {SITE.businesses.dreamRich && (
               <a class="link" href={SITE.businesses.dreamRich} rel="noopener">Visit Website <Icon name="arrow" size={15} /></a>
             )}
           </div>
         </li>
-        <li class="biz-card">
-          <div class="media media--dusk">
-            <Image src={businessCreatif} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
+        <li class="biz-card biz-card--viov">
+          <div class="biz-card__brand">
+            <img src={url('/VIOVFlux_logo.svg')} alt="VIOV Flux logo" width="620" height="180" />
           </div>
           <div class="biz-card__body">
-            <h3><span class="biz-card__dot" aria-hidden="true"></span>Creatif <small>Group of Companies</small></h3>
-            <p>Technology · Digital Solutions<br />Creative Services · Business Support</p>
-            {SITE.businesses.creatif && (
-              <a class="link" href={SITE.businesses.creatif} rel="noopener">Visit Website <Icon name="arrow" size={15} /></a>
-            )}
-          </div>
-        </li>
-        <li class="biz-card">
-          <div class="media media--dusk">
-            <Image src={businessOtherVentures} alt="" widths={[400, 640]} sizes="(min-width: 900px) 300px, 100vw" width={640} height={360} />
-          </div>
-          <div class="biz-card__body">
-            <h3><span class="grad-text"><Icon name="handshake" size={24} /></span>Other Ventures</h3>
-            <p>Hospitality · Imports &amp; Exports<br />Skill Development and more.</p>
+            <p class="biz-card__eyebrow">Artificial Intelligence · Technology</p>
+            <h3>VIOV Flux Pvt. Ltd.</h3>
+            <p>An AI solutions company building practical tools to help businesses work smarter, automate tasks and unlock new possibilities.</p>
           </div>
         </li>
         <li class="biz-card biz-card--soon">
-          <p>More Ventures<br />In The Making.</p>
+          <div class="biz-card__future-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="biz-card__body">
+            <p class="biz-card__eyebrow">Always building</p>
+            <h3>More Ventures<br />In The Making.</h3>
+            <p>New ideas are taking shape. There’s more to come.</p>
+          </div>
         </li>
       </ul>
     </div>

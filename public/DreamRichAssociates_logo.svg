@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 180" role="img" aria-labelledby="title description">
+  <title id="title">Dream Rich Associates</title>
+  <desc id="description">Dream Rich Associates logo with an architectural roof and doorway symbol.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dfb66f"/>
+      <stop offset="1" stop-color="#a87535"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="15" width="150" height="150" rx="34" fill="#192d3b"/>
+  <path d="M42 88 85 51l43 37" fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <path d="M53 84v48h64V84M75 132v-31h20v31" fill="none" stroke="#f6eee1" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+  <path d="M40 143h88" fill="none" stroke="url(#gold)" stroke-linecap="round" stroke-width="5"/>
+  <text x="192" y="83" fill="#192d3b" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-weight="700" letter-spacing="2">DREAM RICH</text>
+  <path d="M194 101h344" stroke="#c49a5b" stroke-width="2"/>
+  <text x="195" y="129" fill="#66727a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" letter-spacing="5">ASSOCIATES PVT. LTD.</text>
+</svg>
