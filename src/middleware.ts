@@ -25,6 +25,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
   }
 
+  const isPublicWritingPage = pathname === '/writing' || /^\/writing\/[^/]+$/.test(pathname);
+  if (isPublicWritingPage && (method === 'GET' || method === 'HEAD')) {
+    return context.redirect(`${pathname}/${context.url.search}`, 301);
+  }
+
   if (!isAdminPath) return next();
 
   // Changes must come from the admin pages themselves, not from another site.

@@ -34,11 +34,14 @@ const {
 } = Astro.props;
 
 const pageTitle = title ? `${title} | ${SITE.name}` : SITE.title;
-const canonical = fullUrl(Astro.url.pathname);
+const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonical = fullUrl(canonicalPath);
 const ogImage =
   typeof image === 'string'
     ? fullUrl(image)
     : fullUrl((await getImage({ src: image, width: 1200, height: 630, format: 'jpg' })).src);
+const serializeJsonLd = (data: object) =>
+  JSON.stringify(data).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 ---
 
 <!doctype html>
@@ -75,7 +78,7 @@ const ogImage =
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    {jsonLd.map((data) => <script is:inline type="application/ld+json" set:html={JSON.stringify(data)} />)}
+    {jsonLd.map((data) => <script is:inline type="application/ld+json" set:html={serializeJsonLd(data)} />)}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>

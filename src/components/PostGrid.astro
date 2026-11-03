@@ -29,11 +29,11 @@ const used = [...new Set(posts.map((p) => p.category))];
           <div class="post-card__media">
             <div class:list={['media', { 'media--dusk': !post.cover }]}>
               {post.cover ? (
-                <img src={post.cover} alt="" loading="lazy" decoding="async" />
+                <img src={post.cover} alt={`Cover image for ${post.title}`} loading="lazy" decoding="async" />
               ) : (
                 <Image
                   src={defaultPostCover}
-                  alt=""
+                  alt={`Cover image for ${post.title}`}
                   widths={[320, 480, 640]}
                   sizes="(min-width: 1000px) 300px, (min-width: 640px) 50vw, 100vw"
                   width={640}

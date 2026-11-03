@@ -1,10 +1,10 @@
 // Everything site-wide lives here. Fill in the empty strings before launch.
 export const SITE = {
   name: 'Ashwin Chekavan',
-  title: 'Ashwin Chekavan — Entrepreneur, Business Strategist & Builder',
+  title: 'Ashwin Chekavan | Entrepreneur, Strategist & Builder',
   description:
-    'Ashwin Chekavan is an entrepreneur and business strategist from Bangalore, India, building businesses, systems and ideas across infrastructure, technology, creative industries and real estate.',
-  tagline: 'Entrepreneur · Business Strategist · Builder',
+    'Official website of Ashwin Chekavan, Entrepreneur, Strategist and Builder. Explore insights on entrepreneurship, business strategy, technology, opportunities and building sustainable businesses.',
+  tagline: 'Entrepreneur · Strategist · Builder',
   location: 'Bangalore, India',
   email: 'hello@ashwinchekavan.com',
   // Optional form backend (Formspree, Web3Forms, …). When empty the contact

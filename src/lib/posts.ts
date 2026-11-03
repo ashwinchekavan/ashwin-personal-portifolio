@@ -52,6 +52,17 @@ export async function listPublished(limit = 500) {
   return (await select('WHERE published = 1 ORDER BY published_at DESC, id DESC LIMIT ?', [limit])).map(toPost);
 }
 
+export async function countPublished() {
+  const [row] = await query<{ total: number }[]>('SELECT COUNT(*) AS total FROM posts WHERE published = 1');
+  return Number(row?.total ?? 0);
+}
+
+export async function listPublishedPage(limit: number, offset: number) {
+  return (
+    await select('WHERE published = 1 ORDER BY published_at DESC, id DESC LIMIT ? OFFSET ?', [limit, offset])
+  ).map(toPost);
+}
+
 // For public pages that should still render if the database is unreachable.
 export async function listPublishedOrEmpty(limit?: number) {
   try {
