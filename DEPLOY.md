@@ -89,8 +89,14 @@ You do not need to create the folder; the app creates it on the first upload. It
    ADMIN_PASSWORD_HASH=scrypt:...          # the line from step 1, without "ADMIN_PASSWORD_HASH="
    SESSION_SECRET=...                      # the openssl output from step 1
    UPLOAD_DIR=/home/u123456789/domains/example.com/uploads
+   GA_MEASUREMENT_ID=G-XXXXXXXXXX          # optional: Google Analytics, from Admin → Data streams
+   CLARITY_PROJECT_ID=abcd1234ef           # optional: Microsoft Clarity, from Settings → Overview
    ```
 
+   - `GA_MEASUREMENT_ID` and `CLARITY_PROJECT_ID` are optional. Leave them out and no tracking
+     code is added. They are read at runtime, so after adding them just restart the app.
+   - Visitors on `www.example.com` are sent to the `SITE_URL` address with a 301, so point both
+     the bare domain and `www` at this app.
    - `DB_HOST` must be `127.0.0.1`, **not** `localhost`. Hostinger's own docs note that Node.js
      apps cannot connect with `localhost`.
    - Do not add `PORT`; Hostinger provides it.

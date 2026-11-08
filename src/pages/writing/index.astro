@@ -24,10 +24,18 @@ const jsonLd = [
       datePublished: post.date.toISOString(),
     })),
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: fullUrl('/') },
+      { '@type': 'ListItem', position: 2, name: 'Writing', item: fullUrl('/writing/') },
+    ],
+  },
 ];
 ---
 
-<Base title="Writing — Thoughts, Lessons & Observations" description={description} jsonLd={jsonLd}>
+<Base title="Writing: Thoughts, Lessons & Observations" description={description} jsonLd={jsonLd}>
   <section class="section page-head">
     <div class="container">
       <p class="eyebrow">Writing</p>

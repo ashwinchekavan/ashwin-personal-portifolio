@@ -26,7 +26,17 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   const isPublicWritingPage = pathname === '/writing' || /^\/writing\/[^/]+$/.test(pathname);
-  if (isPublicWritingPage && (method === 'GET' || method === 'HEAD')) {
+  const isRead = method === 'GET' || method === 'HEAD';
+
+  // One address for the whole site: www.<site> sends visitors and search engines
+  // to the SITE_URL host in a single 301 (adding the /writing/ slash on the way).
+  const site = new URL(process.env.SITE_URL ?? import.meta.env.SITE);
+  if (isRead && requestHost(headers) === `www.${site.hostname}`) {
+    const path = isPublicWritingPage ? `${pathname}/` : pathname;
+    return new Response(null, { status: 301, headers: { Location: `${site.origin}${path}${context.url.search}` } });
+  }
+
+  if (isPublicWritingPage && isRead) {
     return context.redirect(`${pathname}/${context.url.search}`, 301);
   }
 

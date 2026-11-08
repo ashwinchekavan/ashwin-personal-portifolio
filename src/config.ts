@@ -3,7 +3,7 @@ export const SITE = {
   name: 'Ashwin Chekavan',
   title: 'Ashwin Chekavan | Entrepreneur, Strategist & Builder',
   description:
-    'Official website of Ashwin Chekavan, Entrepreneur, Strategist and Builder. Explore insights on entrepreneurship, business strategy, technology, opportunities and building sustainable businesses.',
+    'Entrepreneur, strategist and builder Ashwin Chekavan writes on business strategy, entrepreneurship, technology and building sustainable businesses.',
   tagline: 'Entrepreneur · Strategist · Builder',
   location: 'Bangalore, India',
   email: 'hello@ashwinchekavan.com',
@@ -41,6 +41,21 @@ export const url = (path = '/') => `${BASE}${path}`;
 
 // SITE_URL is read when the server runs, so the address can change without a rebuild.
 export const fullUrl = (path = '/') => new URL(url(path), process.env.SITE_URL ?? import.meta.env.SITE).href;
+
+// Search results show about 155 characters of a description. Keep whole
+// sentences that fit; otherwise cut on a word and add an ellipsis.
+export function metaDescription(text: string, max = 155) {
+  const clean = text.replace(/\s+/g, ' ').trim().replace(/\s*\S*…$/, '');
+  if (clean.length <= max) return clean;
+  const sentences = clean.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [];
+  let fit = '';
+  for (const sentence of sentences) {
+    if ((fit + sentence).trim().length > max) break;
+    fit += sentence;
+  }
+  if (fit.trim().length >= 70) return fit.trim();
+  return `${clean.slice(0, max - 1).replace(/\s+\S*$/, '').replace(/[\s,;:]+$/, '')}…`;
+}
 
 export function readingTime(body = '') {
   return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 200));

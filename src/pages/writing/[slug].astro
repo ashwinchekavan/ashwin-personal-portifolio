@@ -4,7 +4,7 @@ import defaultPostCover from '../../assets/default-post-cover.jpg';
 import Icon from '../../components/Icon.astro';
 import PostGrid from '../../components/PostGrid.astro';
 import Base from '../../layouts/Base.astro';
-import { SITE, formatDate, fullUrl, url } from '../../config';
+import { SITE, formatDate, fullUrl, metaDescription, url } from '../../config';
 import { getPublishedBySlug, listPublishedOrEmpty } from '../../lib/posts';
 import { textOnly } from '../../lib/sanitize';
 
@@ -25,7 +25,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: title,
-    description,
+    description: metaDescription(description),
     datePublished: pubDate.toISOString(),
     dateModified: (updatedDate ?? pubDate).toISOString(),
     articleSection: category,
